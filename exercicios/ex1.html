@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif
+        }
+        body{
+            display: flex;
+            flex-direction: row;
+        }
+        
+        nav{
+            position: fixed;
+            background-color: rgb(59, 114, 109);
+            color: rgb(249, 255, 213);
+            width: 15vw;
+            height: 100vh;
+            padding: 20px;
+        }
+        a{
+            color: rgb(249, 255, 213);
+            text-decoration: none;
+        }
+        a:hover{
+            color: #ff9393;
+        }
+        main{
+            margin-left: 20vw;
+            padding: 30px;
+            width: 85vw;
+            text-align: justify;
+        }
+
+        h1, h2{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        p{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+            <h2>Barra de navegacao</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/" target="_blank">Youtube</a></li>
+                <li><a href="https://www.google.com/?hl=pt_BR" target="_blank">Google</a></li>
+                <li><a href="https://github.com/?locale=pt-br" target="_blank">Github</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section>
+                <h1>Resumo da aula</h1>
+                <ul>
+                    <li>Aprendemos como incorporar links</li>
+                    <li>como colocar imagens </li>
+                    <li>como usar lista ordenas e nao ordenadas</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Como usar a tag para links</h2>
+                <p> A tag usada para criar links em HTML é a tag &lt a &gt (chamada de tag âncora), combinada com o atributo href para indicar o endereço de destino. <br>Abaixo um exemplo de como usar</p>
+                <code> &lt a href="http://" target="_blank" rel="noopener noreferrer"> &gt</code>
+                <img src="imagens/exemplo de link.png" alt="exemplo de link">
+            </section>
+        </main>
+</body>
+</html>
