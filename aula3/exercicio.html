@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            user-select: none;
+        }
+        main{
+            display: flex;
+            margin: auto;
+            padding: auto;
+            width: 600px;
+        }
+        form{
+                        margin: auto;
+            padding: auto;
+            background-color: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 20px;
+        }
+        span{
+            display: block;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form>
+            <h1>Formulario de cadastro</h1>
+
+            <span id="campoNome">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </span>
+
+            <span id="campoEmail">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </span>
+            
+            <span id="campoDataNasc">
+                <label for="DataNasc">Data de nascimento:</label>
+                <input type="date" name="DataNasc" id="DataNasc" required>
+            </span>
+
+            <span id="campoLinguagem">
+                <h4>O que você está estudando agora?</h4>
+                
+                <input type="radio" name="Linguagem" id="HTML" value="HTML">
+                <label for="HTML">HTML</label>
+                <input type="radio" name="Linguagem" id="CSS" value="CSS">
+                <label for="CSS">CSS</label>
+                <input type="radio" name="Linguagem" id="JavaScript" value="JavaScript">
+                <label for="JavaScript">JavaScript</label>
+            </span>
+
+            <span>
+                <h4>O que você gostaria de aprender?</h4>
+                
+                <label>
+                    <input type="checkbox" name="HTML" id="HTML">HTML
+                </label>
+                
+                <label >
+                    <input type="checkbox" name="CSS" id="CSS">CSS
+                </label>
+
+                <label >
+                    <input type="checkbox" name="JavaScript" id="JavaScript">JavaScript
+                </label>
+
+            </span>
+
+            <span id="envio">
+                <input type="submit" value="Enviar">
+            </span>
+
+        </form>
+    </main>
+    
+</body>
+</html>

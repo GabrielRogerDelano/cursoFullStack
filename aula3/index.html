@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html semântico</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        table{
+            margin-bottom: 20px;
+        }
+        th,tr,td{
+            border: 1px solid black ;
+            border-radius: 6px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Descrição</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mouse</td>
+                <td>R$ 7.80</td>
+                <td>Mouse LeNovo 1600 DPI</td>
+            </tr>
+            <tr>
+                <td>Teclado</td>
+                <td>R$ 25.50</td>
+                <td>Teclado mecânico eletrolux</td>
+            </tr>
+            <tr>
+                <td>Garrafa termica 600ml</td>
+                <td>R$ 24.89</td>
+                <td>Garrafa de metal goldtech</td>
+            </tr>
+            <tr>
+                <td>Lapiseira</td>
+                <td>R$ 2.00</td>
+                <td>Lapiseira da bic</td>
+            </tr>
+            <tr>
+                <td>Licença do Linux</td>
+                <td>R$ 900.00</td>
+                <td>Licença de 1 ano para usar Linux</td>
+            </tr>
+            <tr>
+                <td>Curso de HTML</td>
+                <td>R$ 10.00</td>
+                <td>Curso sobre HTML com acesso vitalício</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td>R$ </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <h2>Formulário</h2>
+    <form>
+        <label for="primeiroNome">Informe seu primeiro nome:</label><br>
+        <input type="text" id="primeiroNome" name="priNome" placeholder="Ex: José"><br><br>
+
+        <label for="ultimoNome">Informe seu último nome:</label><br>
+        <input type="text" name="ultimoNome" id="ultNome" placeholder="Ex: Silva"><br><br>
+
+        <label for="email">Informe seu email</label><br>
+        <input type="email" name="email" id="email"  placeholder="Ex: carlos@gmail.com">
+    </form>
+</body>
+</html>
