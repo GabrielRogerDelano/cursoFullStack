@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        section{
+            width: 500px;
+            margin-right: auto;
+            margin-left: auto;
+            padding: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <img id="harley" width="500px" src="img/cinza.png" alt="moto"><br>
+        <label for="cor">Escolha uma cor:</label>
+        <select id="cor" name="cor">
+            <option value="vermelha" >Vermelho</option>
+            <option value="cinza" >cinza</option>
+            <option value="preta" >preta</option>
+            <option value="azul" >Azul</option>
+        </select>
+        <button id="botao">Mudar plano de fundo</button>
+    </section>
+
+    <section>
+        <p id="paragrafo">Titulo</p>
+        <img onclick="alterarImagem()" id="mudarFoto"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNC_n0yMrEyX8LM3w38-SQ0YNOLF1IZlJWYAIbynkGTw&s=10"
+            alt="harley">
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
