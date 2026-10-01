@@ -1,8 +1,4 @@
-let numeros = [1,5,2,3]
-
-// let num = 0
-// let maiorValor = numeros.reduce((acc, atual) => acc > atual, num)
-// console.log(maiorValor)
+let numeros = [1,5,12,2,3,7]
 
 //funcionou
 // function maior(array){
@@ -16,12 +12,14 @@ let numeros = [1,5,2,3]
 // }
 // console.log(maior(numeros))
 
-let maior = (array) => {
-    let maior = 0
-    for(let i = 0 ; i< array.length; i++){
-        if(array[i] > maior){
-            maior = array[i]
-        }
+let n = 0
+numeros.forEach(elemento => {
+    if(elemento > n){
+        n = elemento
     }
-    return maior
-}
+})
+console.log(n)
+
+// dessa forma é a mais limpa
+// let max = Math.max(...numeros)
+// console.log(max)
