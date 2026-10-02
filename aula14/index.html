@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        #container {
+            display: flex;
+            width: 100px;
+            height: 100px;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            border-radius: 16px;
+        }
+
+        button {
+            margin: 20px;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        section {
+            display: flex;
+            margin: 20px;
+            justify-content: space-around;
+            border-radius: 16px;
+        }
+
+        article{
+            margin: 20px;
+            border-radius: 16px;
+        }
+
+        .off {
+            color: red;
+        }
+
+        .on {
+            color: rgb(19, 157, 19);
+        }
+
+        li {
+            list-style: inside;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div id="container">
+            caixa
+        </div>
+        <div id="container">
+            caixa
+        </div>
+        <div id="container">
+            caixa
+        </div>
+        <div id="container">
+            caixa
+        </div>
+    
+    </section>
+
+    <button id="btn_start">start</button>
+
+    <article>
+        <h4>Verificador de senha</h4>
+        <input id="senha" type="text" placeholder="digite uma senha">
+        <ul>
+            <li><span id="digitos" class="off">deve ter 8 digitos</span></li>
+            <li><span id="maiuscula" class="off">deve pelo menos uma maiuscula</span></li>
+        </ul>
+    </article>
+    <script src="script.js"></script>
+</body>
+
+</html>
