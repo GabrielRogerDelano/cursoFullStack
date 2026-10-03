@@ -6,6 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #090979;
+            background: linear-gradient(90deg,hsl(240, 86%, 25%) 0%, rgba(0, 212, 255, 1) 100%);
+
+            -webkit-user-select: none; 
+            -moz-user-select: none;    
+            -ms-user-select: none;  
+            user-select: none; 
+        }
+
+        section{
+            display: block;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 16px;
+            background-color: #fff797;
+            margin: 1em 0;
+            padding: 2em;
+            box-sizing: border-box;
+        }
+
+        .invisivel{
+            display: none;
+            visibility: hidden;
+            transform: 0.5s ease;
+        }
+
+        article{
+            margin: 20px 0;
+        }
+
+        #localSequencia{
+            background-color: #ffc903;
+            border-radius: 16px;
+        }
+
         .quadrado {
             display: inline-block;
             margin: 0.5em;
@@ -22,27 +65,71 @@
             border-radius: 50px;
             background-color: blue;
         }
+
+        .btn{
+            background-color: rgb(126, 111, 255);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px;
+            transition: 0.5s ease;
+        }
+
+        .btn:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .disable{
+            background-color: rgb(61, 59, 80);
+            color: white;
+        }
+
+        .disable:hover{
+            transform: translateZ(-5px);
+        }
+
+        #btn_quadrado{
+            background-color: rgb(255, 115, 115);
+            color: black;
+        }
+
+        #btn_circulo{
+            background-color: rgb(97, 120, 252);
+        }
+
+        #btn_verificar{
+            background-color: rgb(180, 252, 97);
+            color: black;
+        }
+
     </style>
 </head>
 
 <body>
     <section>
         <h2>Jogo da memória</h2>
-        <p>Voce tem 2 segndo para decorar a sequência</p>
-        <input type="submit" value="Estou pronto" id="ready">
-        <article id="localSequencia">
+        <p>Voce tem 4 segundos para decorar a sequência(dificulade atual: <span id="level">5</span>)</p>
+        <div id="areaSequencia" class="">
+            <input type="submit" value="Gerar sequência" id="ready" class="btn">
+        </div>
+        
+        <div id="areaUsuario" class="invisivel">
+            <input type="submit" class="btn" id="btn_quadrado"  value="Quadrado">
+            <input type="submit" class="btn" id="btn_circulo"   value="Circulo">
+            <input type="submit" class="btn" id="btn_limpar"    value="Apagar Tudo">
+            <input type="submit" class="btn" id="btn_verificar" value="Verificar">
+        </div>
 
-        </article>
-    </section>
-    <section>
-        <label for="fname">Escolha: </label>
-        <input type="submit" value="Quadrado" id="btn_quadrado">
-        <input type="submit" value="Circulo" id="btn_circulo">
-        <article id="userSequencia">
+        <div id="areaFinal">
+            <article id="userSequencia">
+            
+            </article>
+            <article id="localSequencia">
 
-        </article>
+            </article>
+        </div>
     </section>
-    <br>
 
     <script src="jogoDaMemoria.js"></script>
 </body>
