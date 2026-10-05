@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f1e2b 0%, #1a365d 100%);
+            color: #ffffff;
+        }
+
+        #cadastro {
+            width: 100%;
+            max-width: 400px;
+            margin: 1.5rem;
+            padding: 2.5rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4),
+                        0 5px 15px rgba(0, 198, 255, 0.1);
+        }
+
+        #cadastro h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #e2e8f0;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.25rem;
+        }
+
+        .campo label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #cbd5e1;
+        }
+
+        input {
+            padding: 0.8rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.07);
+            color: #ffffff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #00d2ff;
+            background-color: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+        }
+
+        /* Estilo para as mensagens de erro (script.js) */
+        span[id$="Error"] {
+            color: #ff6b6b;
+            font-size: 0.8rem;
+            margin-top: 0.4rem;
+            min-height: 1.2em;
+        }
+
+        .campo-btn {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.85rem;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <form id="cadastro">
+        <h2>Criar Conta</h2>
+
+        <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="Seu nome completo">
+            <span id="nomeError"></span>
+        </div>
+
+        <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" placeholder="seu@email.com">
+            <span id="emailError"></span>
+        </div>
+
+        <div class="campo">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" placeholder="••••••••">
+            <span id="senhaError"></span>
+        </div>
+
+        <div class="campo campo-btn">
+            <button type="submit">Cadastrar</button>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

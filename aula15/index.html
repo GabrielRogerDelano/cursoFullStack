@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgb(0, 0, 82),rgb(0, 0, 104));
+        }
+        #cadastro{
+            background-color: rgba(255, 255, 255, 0.05);
+            margin: 1em;
+            padding: 1em;
+            color: white;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        #cadastro h2{
+            text-align: center;
+            font-weight: 600;
+        }
+        .campo{
+            padding: 1em;
+            display: grid;
+            margin-bottom: 1.25rem;
+        }
+        input{
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.07);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus{
+            border-color: #00d2ff;
+            background-color: rgba(255,255,255, 0.12);
+        }
+    </style>
+</head>
+
+<body>
+    <form id="cadastro">
+        <h2>Criar Conta</h2>
+        <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
+            <span id="nomeError"></span>
+        </div>
+        <div class="campo">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email">
+            <span id="emailError"></span>
+        </div>
+        <div class="campo">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha">
+            <span id="senhaError"></span>
+        </div>
+        <div class="campo">
+            <button type="text">Cadastrar</button>
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>
