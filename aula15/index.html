@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
 
             font-family: Arial, Helvetica, sans-serif;
@@ -18,9 +19,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, rgb(0, 0, 82),rgb(0, 0, 104));
+            background: linear-gradient(135deg, rgb(0, 0, 82), rgb(0, 0, 104));
         }
-        #cadastro{
+
+        #cadastro {
             background-color: rgba(255, 255, 255, 0.05);
             margin: 1em;
             padding: 1em;
@@ -28,20 +30,22 @@
             width: 100%;
             max-width: 400px;
             border-radius: 16px;
-            border: 1px solid rgba(255,255,255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
 
-        #cadastro h2{
+        #cadastro h2 {
             text-align: center;
             font-weight: 600;
         }
-        .campo{
+
+        .campo {
             padding: 1em;
             display: grid;
             margin-bottom: 1.25rem;
         }
-        input{
+
+        input {
             padding: 1rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 8px;
@@ -52,9 +56,43 @@
             transition: all 0.3s ease;
         }
 
-        input:focus{
+        input:focus {
             border-color: #00d2ff;
-            background-color: rgba(255,255,255, 0.12);
+            background-color: rgba(255, 255, 255, 0.12);
+        }
+
+        button {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        #cadastrados {
+            background-color: white;
+        }
+
+        table {
+            border: 1px solid black;
+        }
+
+        td {
+            padding: 1em;
         }
     </style>
 </head>
@@ -74,13 +112,29 @@
         </div>
         <div class="campo">
             <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senha">
+            <input type="password" name="senha" id="senha" autocomplete="on">
             <span id="senhaError"></span>
         </div>
         <div class="campo">
             <button type="text">Cadastrar</button>
         </div>
     </form>
+    <section id="cadastrados">
+        <table >
+            <thead>
+                <th>nome</th>
+                <th>email</th>
+                <th>senha</th>
+            </thead>
+            <tbody id="tbody">
+                <tr>
+                    <td>exemplo</td>
+                    <td>email@gmail.com</td>
+                    <td>12345</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
     <script src="script.js"></script>
 </body>
 
