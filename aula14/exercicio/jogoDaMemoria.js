@@ -7,7 +7,7 @@ const ready = document.getElementById('ready')
 const localSequencia = document.getElementById('localSequencia')
 const userSequencia = document.getElementById('userSequencia')
 
-const areaSequencia = document.getElementById('areaSequencia')
+const btnSequencia = document.getElementById('btnSequencia')
 const areaUsuario = document.getElementById('areaUsuario')
 const areaFinal = document.getElementById('areaFinal')
 
@@ -21,6 +21,8 @@ function gerarSequencia() {
     localSequencia.innerHTML = '';
     sequequenciaAtual.length = 0;//zera o array 
     limpar()
+    userSequencia.classList.add('invisivel')
+    localSequencia.classList.remove('invisivel')
 
     for (let i = 1; i <= dificulade; i++) {
         let num = Math.floor(Math.random() * 2) + 1
@@ -34,10 +36,11 @@ function gerarSequencia() {
     }
 
     setTimeout(() => {
-        areaUsuario.setAttribute('class', '')
-        areaSequencia.setAttribute('class', 'invisivel')
-        localSequencia.setAttribute('class', 'invisivel')
-    }, 4000);
+        areaUsuario.classList.remove('invisivel')
+        userSequencia.classList.remove('invisivel')
+        btnSequencia.classList.add('invisivel')
+        localSequencia.classList.add('invisivel')
+    }, 1000);
 }
 
 function userAction(escolha) {
@@ -49,25 +52,37 @@ function userAction(escolha) {
         criarCirculo(userSequencia)
         sequequenciaUsuario.push(2)
         btn_limpar.setAttribute('class', 'btn')
+    }else if (escolha == 3) {
+        criarTriangulo(userSequencia)
+        sequequenciaUsuario.push(3)
+        btn_limpar.setAttribute('class', 'btn')
     }
 }
 
 function criarQuadrado(container = document.body) {
     const elem = document.createElement('div');
-    elem.setAttribute('class', 'quadrado');
+    elem.classList.add('forma');
+    elem.classList.add('quadrado');
     container.appendChild(elem);
 }
 
 function criarCirculo(container = document.body) {
     const elem = document.createElement('div');
-    elem.setAttribute('class', 'circulo');
+    elem.classList.add('forma');
+    elem.classList.add('circulo');
+    container.appendChild(elem);
+}
+
+function criarTriangulo(container = document.body) {
+    const elem = document.createElement('div');
+    elem.classList.add('triangulo');
     container.appendChild(elem);
 }
 
 function limpar() {
     userSequencia.innerHTML = '';
     sequequenciaUsuario.length = 0;
-    btn_limpar.setAttribute('class', 'btn disable')
+    btn_limpar.classList.add('disable')
 }
 
 function identicas(array1, array2) {
@@ -91,10 +106,10 @@ function verificar() {
     } else {
         console.log("errou")
     }
-    areaUsuario.setAttribute('class', 'invisivel')
-    areaFinal.setAttribute('class', '')
+    areaUsuario.classList.add('invisivel')
+    areaFinal.classList.remove('invisivel')
     setTimeout(() => {
-        areaSequencia.setAttribute('class', '')//botao de gerar sequencia aparece depois de 2 segundos
+        btnSequencia.classList.remove('invisivel')//botao de gerar sequencia aparece depois de 2 segundos
     }, 2000);
 }
 
