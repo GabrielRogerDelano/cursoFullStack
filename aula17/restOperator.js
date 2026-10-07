@@ -1,0 +1,1 @@
+// assim como o spreadOperator é representado como (...), mas faz o caminho iverso, agrupando os elementos restantes
