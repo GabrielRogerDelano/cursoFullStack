@@ -16,12 +16,14 @@
 
 const InputId = document.getElementById('id')
 const btn = document.getElementById('btn')
+const btnAside = document.getElementById('btnAside')
 const mensagem = document.getElementById('mensagem')
 const lista = document.getElementById('lista')
+const aside = document.querySelector('aside')
 
-async function buscarDados(id) {
+async function BuscarProdutoId(id) {
     lista.innerHTML = ''
-    mensagem.innerHTML = 'Procurando produto'
+    mensagem.textContent = 'Procurando produto...'
     try {
         const res = await fetch(`https://fakestoreapi.com/products/${id}`)
         if (!res.ok) throw new Error(res.status)
@@ -36,7 +38,7 @@ async function buscarDados(id) {
             <label>Nome</label>
             <p>${data.title}</p>
             <label>Preco</label>
-            <p>${data.price}</p>
+            <p>R$ ${data.price}</p>
             <label>Categoria</label>
             <p>${data.category}</p>
             <label>Avaliacoes</label>
@@ -47,14 +49,19 @@ async function buscarDados(id) {
         </div>
         `
         lista.appendChild(card)
-        mensagem.innerHTML = 'Produto encontrado'
+        mensagem.textContent = 'Produto encontrado'
     } catch (err) {
-        console.error('Erro: ', err)
+        mensagem.textContent  = 'Erro ao procurar por esse ID'
+        console.error(`Erro: ${err}| erroStatus : ${res.status}`)
     }
 }
 
 btn.addEventListener('click', () => {
     const idValue = Number(InputId.value)
+    
+    BuscarProdutoId(idValue)
+})
 
-    buscarDados(idValue)
+btnAside.addEventListener('click', () =>{
+    aside.className == 'ativo'? aside.classList.remove('ativo'):aside.classList.add('ativo')
 })
