@@ -16,35 +16,45 @@
 
 const InputId = document.getElementById('id')
 const btn = document.getElementById('btn')
+const mensagem = document.getElementById('mensagem')
 const lista = document.getElementById('lista')
 
 async function buscarDados(id) {
     lista.innerHTML = ''
+    mensagem.innerHTML = 'Procurando produto'
     try {
         const res = await fetch(`https://fakestoreapi.com/products/${id}`)
-        if(!res.ok) throw new Error(res.status)
+        if (!res.ok) throw new Error(res.status)
         const data = await res.json()
-        
+
         const card = document.createElement("article")
 
         card.innerHTML = `
-        <p>id = ${data.id}</p>
-        <p>nome = ${data.title}</p>
-        <p>preco = ${data.price}</p>
-        <p>categoria = ${data.category}</p>
-        <p>avaliacoes = ${data.rating.rate}</p>
-        
+        <div>
+            <label>Id</label>
+            <p>${data.id}</p>
+            <label>Nome</label>
+            <p>${data.title}</p>
+            <label>Preco</label>
+            <p>${data.price}</p>
+            <label>Categoria</label>
+            <p>${data.category}</p>
+            <label>Avaliacoes</label>
+            <p>${data.rating.rate}</p>
+        </div>
+        <div>
+            <img src="${data.image}" width="50%">
+        </div>
         `
-        
         lista.appendChild(card)
+        mensagem.innerHTML = 'Produto encontrado'
     } catch (err) {
-        console.error('Erro: ',err)
+        console.error('Erro: ', err)
     }
 }
 
-btn.addEventListener('click', ()=>{
+btn.addEventListener('click', () => {
     const idValue = Number(InputId.value)
 
     buscarDados(idValue)
 })
-//document.addEventListener('DOMContentLoaded', buscarDados(1))
