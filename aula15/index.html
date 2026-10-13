@@ -19,6 +19,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             background: linear-gradient(135deg, rgb(0, 0, 82), rgb(0, 0, 104));
         }
 
@@ -83,12 +84,12 @@
             transform: translateY(0);
         }
 
-        #cadastrados {
-            background-color: white;
-        }
 
         table {
+            background-color: rgb(255, 255, 255);
+            font-weight: 600;
             border: 1px solid black;
+            border-radius: 16px;
         }
 
         td {
@@ -120,18 +121,16 @@
         </div>
     </form>
     <section id="cadastrados">
-        <table >
+        <table>
             <thead>
-                <th>nome</th>
-                <th>email</th>
-                <th>senha</th>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Senha</th>
+                </tr>
             </thead>
             <tbody id="tbody">
-                <tr>
-                    <td>exemplo</td>
-                    <td>email@gmail.com</td>
-                    <td>12345</td>
-                </tr>
+
             </tbody>
         </table>
     </section>

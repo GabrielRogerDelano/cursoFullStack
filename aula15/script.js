@@ -85,15 +85,17 @@ function validador(){
 }
 
 function atualizarTabela(){
-    const tr = document.createElement('tr')
-    const td = document.createElement('td')
-//    td.textContent = "teste"
+    tbody.innerHTML = ""
     for(let i = 0; i < cadastro.length; i++){
-        tbody.append(tr.setAttribute('class', 'de'))
-        console.log(`cadastro[i] = ${cadastro[i].nome}`)
-        console.log(`cadastro[i] = ${cadastro[i].email}`)
-        console.log(`cadastro[i] = ${cadastro[i].senha}`)
+        novaLinha = `
+        <tr>
+            <td>${cadastro[i].nome}</td>
+            <td>${cadastro[i].email}</td>
+            <td>${cadastro[i].senha}</td>
+        </tr>`
+        tbody.innerHTML += novaLinha
     }
 }
 
+document.addEventListener('DOMContentLoaded', atualizarTabela())
 form.addEventListener('submit', validador)
