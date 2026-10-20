@@ -1,0 +1,66 @@
+:root{
+    --plano-fundo: rgb(255, 255, 255);
+    --cor-primaria: rgba(255, 255, 139, 0.695);
+    --cor-secundaria: rgb(247, 167, 124);
+    --cor-excluir: red;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--plano-fundo);
+}
+
+section{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor-primaria);
+
+    min-height: 20vh;
+    width: 80vw;
+
+    border-radius: 1em;
+}
+
+li{
+    list-style: none;
+}
+
+input{
+    padding: 1em;
+    /* width: 80%; */
+    border-radius: 10px;
+    border: solid 1px green;
+}
+
+button{
+    font-weight: 600;
+    border-radius: 10px;
+    margin-left: 10px;
+    padding: 1em;
+    transition: all 0.5s ease;
+    color: var(--cor-secundaria);
+    background-color: var(--plano-fundo);
+    border: solid 1px green;
+}
+
+.delete{
+    color: var(--cor-excluir);
+    background-color: var(--cor-secundaria);
+    border: solid 1px var(--cor-excluir);
+    
+}
+.delete:hover{
+    color: rgb(255, 255, 255);
+    background-color: var(--cor-excluir);
+}
