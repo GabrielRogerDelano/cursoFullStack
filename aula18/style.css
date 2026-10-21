@@ -1,3 +1,10 @@
+:root{
+    --cor-principal: rgb(55, 195, 0);
+    --cor-principal-transparender: rgba(55, 195, 0, 0.2);
+    --cor-auxiliar: white
+
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -28,7 +35,7 @@ aside{
     height: 100vh;
     width: 200px;
     padding-top: 100px;
-    background-color: rgba(55, 195, 0, 0.744);
+    background-color: var(--cor-principal);
     transition: all 0.5s ease;
     transform: translateX(-200px);
     box-sizing: border-box;
@@ -38,7 +45,7 @@ aside.ativo{
 }
 
 h1{
-    color: rgb(55, 195, 0);
+    color: var(--cor-principal);
 }
 
 article{
@@ -51,19 +58,19 @@ article > div{
 }
 
 button{
-    color: rgb(55, 195, 0);
+    color: var(--cor-principal);
     font-weight: 600;
-    background-color: rgba(55, 195, 0, 0.181);
+    background-color: var(--cor-principal-transparender);
     padding: 16px;
-    border: 1px solid rgb(55, 195, 0);
+    border: 1px solid var(--cor-principal);
     border-radius: 8px;
     transition: all 0.5s ease;
     cursor: pointer;
 }
 
 button:hover{
-    color: rgb(255, 255, 255);
-    background-color: rgb(55, 195, 0);
+    color: var(--cor-auxiliar);
+    background-color: var(--cor-principal);
 }
 
 #btnAside{
@@ -80,12 +87,12 @@ input{
     padding: 1.2em;
     width: 500px;
     border-radius: 8px;
-    border: 1px solid rgb(55, 195, 0);
+    border: 1px solid var(--cor-principal);
 }
 
-label{
+h4{
     font-weight: 600;
-    color: rgb(55, 195, 0);
+    color: var(--cor-principal);
 }
 
 img{

@@ -13,6 +13,7 @@
 //     })
 //     .then(data => console.log(data))
 //     .catch(err => console.error('Erro: ', err))
+let estadoAtual = 'produtos'
 
 const InputId = document.getElementById('id')
 const btn = document.getElementById('btn')
@@ -33,16 +34,16 @@ async function BuscarProdutoId(id) {
 
         card.innerHTML = `
         <div>
-            <label>Id</label>
+            <h4>Id</h4>
             <p>${data.id}</p>
-            <label>Nome</label>
+            <h4>Nome</h4>
             <p>${data.title}</p>
-            <label>Preco</label>
+            <h4>Preco</h4>
             <p>R$ ${data.price}</p>
-            <label>Categoria</label>
+            <h4>Categoria</h4>
             <p>${data.category}</p>
-            <label>Avaliacoes</label>
-            <p>${data.rating.rate}</p>
+            <h4>Avaliacoes</h4>
+            <p>${data.rating.rate} estrelas de ${data.rating.count} avaliações</p>
         </div>
         <div>
             <img src="${data.image}" width="50%">
@@ -56,10 +57,13 @@ async function BuscarProdutoId(id) {
     }
 }
 
-btn.addEventListener('click', () => {
-    const idValue = Number(InputId.value)
-    
-    BuscarProdutoId(idValue)
+function renderizarProduto(data){
+
+}
+
+btn.addEventListener('click', async () => {
+    const id = InputId.value
+    renderizarProduto(id)
 })
 
 btnAside.addEventListener('click', () =>{
