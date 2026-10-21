@@ -35,14 +35,12 @@ function Crud() {
                     <input type="text" placeholder="Adicione aqui." onChange={(e) => setTextoDigitado(e.target.value)} />
                     <button type="submit">Adicionar</button>
                 </form>
-            </section>
 
-            <section>
                 <h3>Lista</h3>
                 <ul>
                     {lista.map((item) => {
                         return <li key={item.id}>
-                            {item.nome}
+                            <p>{item.nome}</p>
                             <button>Editar</button>
                             <button type="button" className="delete" onClick={() => { removerItem(item.id)}}>excluir</button>
                         </li>
