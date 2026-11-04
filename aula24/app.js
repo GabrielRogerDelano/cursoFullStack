@@ -1,0 +1,2 @@
+import { soma } from "./math.js" 
+console.log(soma(2,3))
