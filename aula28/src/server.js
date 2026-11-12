@@ -1,14 +1,14 @@
-import express from'express'
-import cors from'cors'
-// import router from "./routers/router.js"
+import express from  'express'
+import cors from 'cors'
 import 'dotenv/config'
+import { pool } from './config/db.js'
+import router from './routers/router.js';
 
 const PORT = process.env.PORT
 
 const app = express()
+app.use(express.json())
 
-app.use(cors())
+app.use("/", router)
 
-// app.use("/", router)
-
-app.listen(PORT, () => {console.log("Servidor iniciado\nhttp://localhost:3000/")})
+app.listen(PORT, () => {console.log(`Servidor iniciado\nhttp://localhost:${PORT}/`)})
